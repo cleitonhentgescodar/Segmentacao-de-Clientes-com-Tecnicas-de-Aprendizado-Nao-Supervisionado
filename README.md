@@ -1,61 +1,120 @@
-# 📊 Segmentação de Clientes com Técnicas de Aprendizado Não Supervisionado
+# 📊 Segmentação de Clientes com Aprendizado Não Supervisionado (K-Means)
 
-Este projeto tem como objetivo identificar padrões de comportamento entre consumidores de um e-commerce utilizando **métodos de aprendizado não supervisionado**, com foco na **segmentação de clientes via K-Means**.
+Este projeto aplica **técnicas de aprendizado de máquina não supervisionado** para identificar **padrões de comportamento de clientes em um e-commerce**. Utilizando o algoritmo **K-Means**, o estudo busca **segmentar consumidores com base em características de compra, rentabilidade e comportamento**, gerando insights que podem apoiar **estratégias de marketing, retenção e personalização de ofertas**.
 
-O estudo utiliza o conjunto de dados **E-commerce Sales Transactions Dataset** (Kaggle), que contém milhares de registros de vendas, incluindo informações sobre perfil do cliente, categorias de produtos e métricas financeiras.
-
----
-
-## 🚀 Objetivos
-
-- Explorar padrões de consumo e desempenho de vendas por categoria, região e gênero.  
-- Calcular indicadores como **lucro médio**, **volume de vendas** e **margem percentual**.  
-- Aplicar o algoritmo **K-Means** para **segmentar clientes** com base em comportamento e rentabilidade.  
-- Avaliar o número ideal de clusters usando **inertia** e **silhouette score**.  
-- Visualizar e interpretar os clusters para identificar **perfis e oportunidades de marketing**.
+O projeto utiliza o dataset **E-commerce Sales Transactions Dataset**, disponível no Kaggle, contendo milhares de registros de vendas com informações sobre clientes, categorias de produtos, descontos e métricas financeiras.
 
 ---
 
-## 🧠 Metodologia
+# 🎯 Objetivos
 
-### 1. Pré-processamento dos dados
-- Tratamento de valores ausentes e duplicados.  
-- Criação de variáveis derivadas (ex.: lucro percentual, total gasto).  
-- Codificação de variáveis categóricas e normalização com *StandardScaler*.
-
-### 2. Análise Exploratória (EDA)
-- Análise das distribuições de lucro, descontos e volume de vendas.  
-- Comparação de desempenho entre categorias e regiões.  
-- Visualização temporal do lucro e das vendas.
-
-### 3. Modelagem
-- Aplicação do algoritmo **K-Means** para agrupar clientes.  
-- Determinação da melhor quantidade de clusters via método do cotovelo (*Elbow Method*) e *Silhouette Score*.  
-- Interpretação dos grupos formados com base em métricas médias e perfis de consumo.
+- Explorar padrões de consumo entre clientes de um e-commerce  
+- Analisar métricas de desempenho como **lucro**, **descontos**, **volume de vendas** e **margens**  
+- Criar **features derivadas** relevantes para análise de comportamento do consumidor  
+- Aplicar **K-Means Clustering** para segmentação de clientes  
+- Determinar o número ideal de clusters usando **Elbow Method** e **Silhouette Score**  
+- Interpretar os clusters para identificar **perfis de clientes e oportunidades estratégicas de negócio**
 
 ---
 
-## 📈 Principais Insights
+# 🧠 Metodologia
 
-- Perfis de clientes com **alto valor médio de compra**, mas **baixa recorrência**, sugerem oportunidades de fidelização.  
-- Segmentos mais lucrativos tendem a concentrar-se em **regiões específicas e faixas etárias médias**.  
-- Descontos excessivos impactam negativamente a margem de lucro em determinados clusters.  
-- A segmentação permite direcionar **campanhas personalizadas** e **estratégias de retenção**.
+## 1️⃣ Pré-processamento dos dados
 
----
+Etapas realizadas para preparar os dados para modelagem:
 
-## 🧩 Tecnologias Utilizadas
-- **Python**  
-- **Pandas / NumPy** – manipulação e análise de dados  
-- **Scikit-learn** – modelagem de aprendizado não supervisionado  
-- **Matplotlib / Seaborn** – visualização de dados  
-- **Jupyter Notebook** – ambiente de desenvolvimento e documentação  
+- Remoção de **valores ausentes e registros duplicados**
+- Criação de variáveis derivadas, como:
+  - **Lucro percentual**
+  - **Total gasto por cliente**
+  - **Indicadores de comportamento de compra**
+- Codificação de variáveis categóricas
+- Padronização dos dados utilizando **StandardScaler**
 
----
-
-## 📚 Fonte
-Dataset: [E-commerce Sales Transactions Dataset – Kaggle](https://www.kaggle.com/datasets)
+Essas etapas garantem que os dados estejam adequados para algoritmos baseados em distância, como o **K-Means**.
 
 ---
 
-💡 *Este projeto faz parte de uma coleção de estudos voltados à aplicação prática de técnicas de Ciência de Dados, com foco em análise de comportamento do consumidor e insights de marketing.*
+## 2️⃣ Análise Exploratória de Dados (EDA)
+
+Foi realizada uma análise exploratória para entender padrões de vendas e comportamento dos clientes:
+
+- Distribuição de **lucro, descontos e volume de vendas**
+- Comparação de desempenho entre **categorias de produtos**, **regiões** e **gênero**
+- Análise temporal de **vendas e lucro**
+- Identificação de possíveis **padrões de consumo e rentabilidade**
+
+As visualizações foram construídas com **Matplotlib** e **Seaborn**.
+
+---
+
+## 3️⃣ Modelagem – Segmentação com K-Means
+
+Para identificar grupos de clientes com comportamentos semelhantes, foi aplicado o algoritmo **K-Means**.
+
+### Determinação do número ideal de clusters
+
+Foram utilizados dois métodos:
+
+**Elbow Method**
+
+Analisa a redução da **inertia (SSE)** conforme o número de clusters aumenta.
+
+**Silhouette Score**
+
+Mede a qualidade da separação entre clusters.
+
+A combinação dessas métricas permitiu definir o **número ideal de segmentos de clientes**.
+
+---
+
+# 📈 Principais Insights
+
+A segmentação revelou diferentes perfis de clientes:
+
+- **Clientes de alto valor**: alto ticket médio e maior contribuição para o lucro  
+- **Clientes sensíveis a desconto**: compras frequentes, porém com margens menores  
+- **Clientes ocasionais**: baixo volume de compras, mas com potencial de crescimento  
+
+Outras observações importantes:
+
+- Descontos elevados impactam negativamente a **margem de lucro em determinados segmentos**
+- Alguns clusters apresentam **alto valor médio de compra, porém baixa recorrência**, indicando oportunidades de **programas de fidelização**
+- Determinadas regiões concentram **segmentos mais rentáveis**, sugerindo oportunidades estratégicas de expansão
+
+---
+
+# 🧩 Tecnologias Utilizadas
+
+- **Python**
+- **Pandas** – manipulação e análise de dados
+- **NumPy** – operações numéricas
+- **Scikit-learn** – modelagem de machine learning
+- **Matplotlib** – visualização de dados
+- **Seaborn** – visualização estatística
+- **Jupyter Notebook** – desenvolvimento e documentação do projeto
+
+---
+
+# 📊 Aplicações de Negócio
+
+A segmentação de clientes permite:
+
+- Criar **campanhas de marketing personalizadas**
+- Melhorar estratégias de **retenção e fidelização**
+- Identificar **clientes de alto valor**
+- Otimizar políticas de **desconto e precificação**
+- Apoiar decisões estratégicas de **expansão de mercado**
+
+---
+
+# 📚 Fonte dos Dados
+
+Dataset: **E-commerce Sales Transactions Dataset**
+
+Disponível em:  
+https://www.kaggle.com/datasets
+
+---
+
+💡 *Este projeto faz parte de um portfólio de estudos focado na aplicação prática de técnicas de Ciência de Dados para análise de comportamento do consumidor e geração de insights estratégicos.*
